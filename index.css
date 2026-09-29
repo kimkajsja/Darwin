@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+    color-scheme: light;
+    --ink: #202c27;
+    --muted-ink: #68716a;
+    --forest: #183d32;
+    --forest-deep: #102b24;
+    --moss: #72836a;
+    --copper: #b6784b;
+    --paper: #f4f2ea;
+    --surface: #fffefa;
+    --line: #dedfd5;
+    --shadow: 0 22px 58px rgba(27, 48, 39, 0.09);
+    font-family: 'DM Sans', 'Segoe UI', sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    min-width: 320px;
+    background: var(--paper);
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 34px clamp(18px, 5vw, 76px) 0;
+    color: var(--ink);
+    background-color: var(--paper);
+    background-image: linear-gradient(115deg, rgba(255, 255, 255, 0.5), transparent 46%),
+        repeating-linear-gradient(0deg, rgba(40, 58, 46, 0.018) 0, rgba(40, 58, 46, 0.018) 1px, transparent 1px, transparent 5px);
+    font-size: 16px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 9px;
+    background: linear-gradient(90deg, var(--forest) 0 68%, var(--copper) 68% 83%, var(--moss) 83%);
+    content: '';
+}
+
+section {
+    width: min(100%, 1120px);
+    margin-inline: auto;
+}
+
+.tarjeta-enciclopedia1,
+.tarjeta-enciclopedia {
+    width: min(100%, 1020px);
+    margin: 22px auto;
+    border: 1px solid rgba(34, 57, 44, 0.08);
+    border-radius: 5px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.tarjeta-enciclopedia1 {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(42px, 7vw, 84px) 28px;
+    border: 0;
+    color: #f8f5eb;
+    background-color: var(--forest);
+    background-image: linear-gradient(125deg, rgba(17, 43, 35, 0.97), rgba(35, 76, 60, 0.94)),
+        repeating-linear-gradient(45deg, transparent 0 12px, rgba(255, 255, 255, 0.045) 12px 13px);
+    text-align: center;
+    box-shadow: 0 28px 64px rgba(16, 43, 36, 0.22);
+    animation: rise-in 700ms both;
+}
+
+.tarjeta-enciclopedia1::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #d2a26b 50%, transparent);
+    content: '';
+}
+
+.categoria {
+    display: inline-block;
+    margin-bottom: 17px;
+    color: #d5b17d;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+h1,
+h2 {
+    color: var(--forest-deep);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    line-height: 1.18;
+}
+
+h1 {
+    margin: 0 0 24px;
+    font-size: clamp(2rem, 5vw, 3.35rem);
+    text-align: center;
+    text-wrap: balance;
+}
+
+.tarjeta-enciclopedia1 h1 {
+    margin-bottom: 12px;
+    color: #fffdf6;
+    font-size: clamp(3rem, 8vw, 6.2rem);
+    line-height: 1.04;
+}
+
+h2 {
+    margin: 0 0 24px;
+    font-size: clamp(1.55rem, 3vw, 2rem);
+}
+
+.subtitulo {
+    margin: 0 auto 24px;
+    color: #dce5da;
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+}
+
+.fechas {
+    display: inline-block;
+    padding: 5px 15px;
+    border: 1px solid rgba(225, 194, 145, 0.55);
+    border-radius: 99px;
+    color: #e8c796;
+    font-size: 0.86rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+}
+
+.tarjeta-enciclopedia {
+    padding: clamp(26px, 5vw, 54px);
+    animation: rise-in 700ms 80ms both;
+}
+
+.tarjeta-enciclopedia p,
+.tarjeta-enciclopedia1 p {
+    margin: 0;
+    color: #46524b;
+    font-size: 1rem;
+    line-height: 1.9;
+    white-space: pre-line;
+    text-wrap: pretty;
+}
+
+.tarjeta-enciclopedia1 p {
+    color: #f8f5eb;
+}
+
+.tarjeta-enciclopedia img {
+    display: block;
+    width: min(100%, 380px);
+    max-height: 470px;
+    margin: 28px auto 0;
+    border: 7px solid #fff;
+    outline: 1px solid var(--line);
+    object-fit: cover;
+    box-shadow: 0 14px 32px rgba(32, 44, 39, 0.15);
+}
+
+.tarjeta-enciclopedia1 img {
+    width: min(100%, 380px);
+    max-height: 440px;
+    margin: 34px auto 0;
+    border: 6px solid rgba(255, 255, 255, 0.92);
+    object-fit: cover;
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.24);
+}
+
+.botones {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 0;
+}
+
+.boton {
+    display: flex;
+    min-height: 68px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 17px 20px;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--moss);
+    border-radius: 3px;
+    color: var(--forest);
+    background: #fbfaf5;
+    font-size: 0.96rem;
+    font-weight: 600;
+    line-height: 1.45;
+    text-align: left;
+    text-decoration: none;
+    transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+a.boton::after {
+    color: var(--copper);
+    content: '\2197';
+    font-size: 1.15rem;
+    transition: transform 180ms ease;
+}
+
+div.boton {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    min-height: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+a.boton:hover {
+    transform: translateY(-2px);
+    border-color: #bdc7b8;
+    border-left-color: var(--copper);
+    background: #f1f2e9;
+    box-shadow: 0 8px 20px rgba(31, 61, 48, 0.08);
+}
+
+a.boton:hover::after {
+    transform: translate(2px, -2px);
+}
+
+a {
+    color: var(--forest);
+}
+
+button,
+.btn-regresar,
+a > button {
+    display: inline-flex;
+    min-height: 46px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 22px;
+    border: 1px solid var(--forest);
+    border-radius: 3px;
+    color: #fffdf6;
+    background: var(--forest);
+    font: 600 0.92rem 'DM Sans', 'Segoe UI', sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 180ms ease, transform 180ms ease;
+}
+
+button:hover,
+.btn-regresar:hover,
+a > button:hover {
+    transform: translateY(-1px);
+    background: var(--forest-deep);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #d5a36b;
+    outline-offset: 3px;
+}
+
+hr {
+    width: min(100%, 1020px);
+    margin: 34px auto 20px;
+    border: 0;
+    border-top: 1px solid var(--line);
+}
+
+footer {
+    margin: 38px calc(-1 * clamp(18px, 5vw, 76px)) 0;
+    padding: 24px clamp(18px, 5vw, 76px);
+    border-top: 1px solid rgba(255, 255, 255, 0.13);
+    color: #e4e9df;
+    background: var(--forest-deep);
+    font-size: 0.84rem;
+    text-align: center;
+}
+
+@keyframes rise-in {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 680px) {
+    body {
+        padding-top: 22px;
+        font-size: 15px;
+    }
+
+    .tarjeta-enciclopedia1,
+    .tarjeta-enciclopedia {
+        margin: 14px auto;
+    }
+
+    .tarjeta-enciclopedia1 {
+        padding-inline: 18px;
+    }
+
+    .botones {
+        grid-template-columns: 1fr;
+    }
+
+    div.boton {
+        grid-template-columns: 1fr;
+    }
+
+    .boton {
+        min-height: 58px;
+    }
+
+    .tarjeta-enciclopedia img {
+        max-height: 390px;
+    }
+
+    footer {
+        margin-top: 26px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
